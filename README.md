@@ -16,3 +16,14 @@ yarn && yarn dev
 # NPM users
 npm install && npm run dev
 ```
+
+# Tests
+
+Pour lancer les tests :
+
+```bash
+# Yarn users
+yarn && yarn test
+# NPM users
+npm install && npm run test
+```
