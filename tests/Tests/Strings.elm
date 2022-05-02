@@ -1,19 +1,23 @@
-module StringsTest exposing (..)
+module Tests.Strings exposing (..)
 
 import Test exposing (Test, describe, test)
 import Expect exposing (Expectation)
 import Strings
 
+-- That file tests all the functions in src/Strings.elm.
+--   Fill in the blanks in source file and the tests will run for you.
+--   Most tests should indicates an error at first. Don't take it personnally.
 
--- Palyndromes
-lavalTrue : a -> Expectation
-lavalTrue _ =
+-- Palyndromes checks if a word can be read in both way (left to right and
+--   right to left).
+lavalTrue : () -> Expectation
+lavalTrue () =
   "laval"
   |> Strings.isPalyndrome
   |> Expect.true "laval is a palyndrome"
 
-azertyFalse : a -> Expectation
-azertyFalse _ =
+azertyFalse : () -> Expectation
+azertyFalse () =
   "azerty"
   |> Strings.isPalyndrome
   |> Expect.false "azerty is not a palyndrome"
@@ -26,15 +30,15 @@ isPalyndrome =
     ]
 
 
--- Pangrams
-pangramTrue : a -> Expectation
-pangramTrue _ =
+-- Pangrams checks if a word contains all the alphabet inside.
+pangramTrue : () -> Expectation
+pangramTrue () =
   "The quick brown fox jumps over the lazy dog"
   |> Strings.isPangram
   |> Expect.true "'The quick brown fox jumps over the lazy dog' is a pangram"
 
-pangramFalse : a -> Expectation
-pangramFalse _ =
+pangramFalse : () -> Expectation
+pangramFalse () =
   "bloup"
   |> Strings.isPangram
   |> Expect.false "bloup is not a pangram"
