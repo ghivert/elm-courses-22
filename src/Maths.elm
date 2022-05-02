@@ -12,5 +12,6 @@ fact n = 0
 fib : Int -> Int
 fib n = 0
 
+-- Change function body.
 fibTail : Int -> Int
 fibTail n = 0
