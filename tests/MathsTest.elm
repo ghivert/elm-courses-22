@@ -4,6 +4,7 @@ import Test exposing (Test, describe, test)
 import Expect exposing (Expectation)
 import Maths
 
+
 -- Sum
 sumTrue : a -> Expectation
 sumTrue _ =
@@ -24,6 +25,7 @@ sumTest =
     , test "with 20 should not return 200" sumFalse
     ]
 
+
 -- Fact
 factTrue : a -> Expectation
 factTrue _ =
@@ -40,6 +42,34 @@ factFalse _ =
 factTest : Test
 factTest =
   describe "Maths.fact"
-  [ test "with 5 should return 120" factTrue
-  , test "with 10 should not return 3628800" factFalse
-  ]
+    [ test "with 5 should return 120" factTrue
+    , test "with 10 should not return 3628800" factFalse
+    ]
+
+
+-- Fibonacci
+fibNotTail : Int -> Int -> a -> Expectation
+fibNotTail value res _ =
+  value
+  |> Maths.fib
+  |> Expect.equal res
+
+fibTail : Int -> Int -> a -> Expectation
+fibTail value res _ =
+  value
+  |> Maths.fibTail
+  |> Expect.equal res
+
+fibTest : Test
+fibTest =
+  describe "Maths.fib"
+    [ test "with 7 should return 13" (fibNotTail 7 13)
+    , test "with 15 should not return 610" (fibNotTail 15 610)
+    ]
+
+fibTailTest : Test
+fibTailTest =
+  describe "Maths.fibTail"
+    [ test "with 7 should return 13" (fibTail 7 13)
+    , test "with 15 should not return 610" (fibTail 15 610)
+    ]

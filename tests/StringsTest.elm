@@ -4,6 +4,7 @@ import Test exposing (Test, describe, test)
 import Expect exposing (Expectation)
 import Strings
 
+
 -- Palyndromes
 lavalTrue : a -> Expectation
 lavalTrue _ =
@@ -23,6 +24,7 @@ isPalyndrome =
     [ test "should return true for laval" lavalTrue
     , test "should return false for azerty" azertyFalse
     ]
+
 
 -- Pangrams
 pangramTrue : a -> Expectation
