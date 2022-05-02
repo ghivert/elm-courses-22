@@ -3,24 +3,11 @@ module Strings exposing (..)
 -- Change that function body
 isPalyndrome : String -> Bool
 isPalyndrome str =
-  if str == "" then
-    True
-  else
-    let
+  if str == "" then True else
+  let len = String.length str
       firstChar = String.slice 0 1 str
-      endChar =
-        String.slice
-          (String.length str - 1)
-          (String.length str)
-          str
-    in
-      if firstChar == endChar then
-        isPalyndrome
-          (String.slice 1
-            (String.length str - 1) str
-          )
-      else
-        False
+      endChar = String.slice (len - 1) len str in
+    firstChar == endChar && isPalyndrome (String.slice 1 (len - 1) str)
 
 alph : List String
 alph = String.split "" "abcdefghijklmnopqrstuvwxyz"
@@ -37,11 +24,7 @@ isPangramHelp str alphabet =
         False
 
 isPangram : String -> Bool
-isPangram str =
-  isPangramHelp str alph
+isPangram str = isPangramHelp str alph
 
 isPangramAny : String -> Bool
-isPangramAny str =
-  List.any
-    (\letter -> String.contains letter str)
-    alph
+isPangramAny str = List.any (\l -> String.contains l str) alph
