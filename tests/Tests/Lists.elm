@@ -9,7 +9,7 @@ import Utils.Lists as Utils
 --   Fill in the blanks in source file and the tests will run for you.
 --   Most tests should indicates an error at first. Don't take it personnally.
 
--- Length tests. Compute the length of a List without using List.length.
+-- Length tests. Computes the length of a List without using List.length.
 lengthTest : List a -> Int -> () -> Expectation
 lengthTest list size () = Lists.length list |> Expect.equal size
 
@@ -37,7 +37,7 @@ member =
     ]
 
 
--- Filter Even. Removes all elements at an even position in the List.
+-- Filter Even. Keeps all elements at an even position in the List.
 filterEven : Test
 filterEven =
   describe "Lists.filterEven"
