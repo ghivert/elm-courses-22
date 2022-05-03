@@ -28,13 +28,13 @@ factTrue : () -> Expectation
 factTrue () = Maths.fact 5 |> Expect.equal 120
 
 factFalse : () -> Expectation
-factFalse () = Maths.fact 10 |> Expect.notEqual 3628800
+factFalse () = Maths.fact 10 |> Expect.equal 3628800
 
 factTest : Test
 factTest =
   describe "Maths.fact"
     [ test "with 5 should return 120" factTrue
-    , test "with 10 should not return 3628800" factFalse
+    , test "with 10 should return 3628800" factFalse
     ]
 
 
