@@ -19,7 +19,7 @@ length =
     [ test "should return 0 for empty list" (lengthTest [] 0)
     , test "should return 2 for two-length list" (lengthTest [ 1, 2 ] 2)
     , test "should return 10 for ten-length list"
-        <| lengthTest [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] 0
+        <| lengthTest [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] 10
     ]
 
 
